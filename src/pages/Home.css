@@ -1,0 +1,218 @@
+/* Home.css */
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 663px;
+    background-image: url('../images/hero-image.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.bnt1 { position: absolute; top: 297px; left: 45%; }
+.bnt2 { position: absolute; top: 86px; right: 5%; }
+
+.hero-content {
+    position: absolute;
+    height: 173px;
+    top: 93px;
+    left: 100px;
+    width: 50%;
+}
+.hero-content h1 {
+    font-family: 'Science Black', sans-serif;
+    font-weight: 900;
+    max-width: 557px;
+    width: 70%;
+    font-size: 42px;
+}
+.hero-content .herop {
+    font-family: 'Science-Thin', sans-serif;
+    font-weight: 700;
+    max-width: 545px;
+    height: 33px;
+    width: 80%;
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+.hero-content .hero-button {
+    width: 210px;
+    height: 52px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.infodiv {
+    display: flex;
+    width: 596px;
+    height: 74px;
+    margin-top: 70px;
+}
+.infodiv .infop {
+    font-family: 'Science-Regular', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    margin-right: 40px;
+    width: 150px;
+    height: 48px;
+}
+.infodiv .ifp {
+    font-family: 'Science-Thin', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    width: 141px;
+    height: 48px;
+}
+
+.brands-section {
+    display: flex;
+    gap: 10px;
+    height: 122px;
+    background: black;
+}
+.brands-section .brend {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-arrivals {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+.newp p {
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.newcarr {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;/* space-evenly-ի փոխարեն center + gap */
+    gap: 20px;
+    flex-wrap: wrap; /* Որպեսզի շատ լինելու դեպքում ներքև իջնեն */
+}
+
+
+
+/* View All կոճակ */
+.viall {
+  display: flex;
+  justify-content: center;  
+  
+  margin-top: 40px;         
+  margin-bottom: 60px;     
+}
+.heroButton {
+  background-color: white;      
+  color: black;               
+  border: 1px solid #E0E0E0;   
+  padding: 16px 60px;         
+  border-radius: 62px;         
+  font-size: 16px;
+  font-weight: 500;            
+  cursor: pointer;              
+  transition: all 0.3s ease;   
+  width: 100%;                  
+  max-width: 220px;             
+}
+.heroButton:hover {
+  background-color: black;      
+  color: white;                 
+  border-color: black;          
+}
+
+
+
+
+/* Top Selling Headers */
+.towp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.towp p {
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+/* Happy Customers - Սրանք թողնում ենք, քանի որ Home-ի մաս են */
+.happy-customers {
+  padding: 40px 20px;
+  max-width: 1390px;
+  margin: 0 auto;
+}
+.customers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.customers-header h2 {
+  font-family: 'Integral CF', sans-serif; 
+  font-size: 48px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+}
+.arrows { display: flex; gap: 12px; }
+.arrows button { background: none; border: none; cursor: pointer; padding: 5px; transition: opacity 0.3s; }
+.arrows button:hover { opacity: 0.6; }
+
+.reviews-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; 
+  scroll-behavior: smooth; 
+  padding-bottom: 20px; 
+  scrollbar-width: none; 
+}
+.reviews-container::-webkit-scrollbar { display: none; }
+
+.review-card {
+  min-width: 390px; 
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: white;
+}
+.review-stars { display: flex; gap: 4px; color: #FFC633; }
+.review-name { font-weight: bold; font-size: 18px; display: flex; align-items: center; gap: 6px; }
+.review-text { font-size: 14px; color: #666; line-height: 1.5; margin: 0; }
+
+@media (max-width: 768px) {
+  .customers-header h2 { font-size: 32px; }
+  .review-card { min-width: 280px; }
+}
+
+.carousel-wrapper { position: relative; width: 100%; overflow: hidden; }
+.carousel-wrapper::before, .carousel-wrapper::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 150px; z-index: 2; pointer-events: none; 
+}
+.carousel-wrapper::before { left: 0; background: linear-gradient(to right, white 10%, transparent 100%); }
+.carousel-wrapper::after { right: 0; background: linear-gradient(to left, white 10%, transparent 100%); }
+
+@media (max-width: 768px) {
+  .carousel-wrapper::before, .carousel-wrapper::after { width: 60px; }
+}

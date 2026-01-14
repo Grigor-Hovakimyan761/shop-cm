@@ -1,0 +1,29 @@
+.casual-page-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Satoshi', sans-serif;
+    /* Կամ Inter, Roboto */
+    gap: 40px;
+}
+
+/* Sidebar (եթե հետագայում պետք լինի) */
+.sidebar-section {
+    width: 30%;
+    background: #e3e2e2;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+/* Ապրանքների ցանց (Grid) */
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 սյունակ */
+    gap: 30px;
+    /* Հեռավորությունը քարտերի միջև */
+}
+

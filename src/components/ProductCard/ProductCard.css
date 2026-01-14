@@ -1,0 +1,71 @@
+/* Մեկ ապրանքի քարտ */
+.single-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+/* Նկարի կոնտեյներ */
+.img-holder {
+    width: 200px;
+    aspect-ratio: 1 / 1.1;
+    /* Քառակուսուն մոտ ուղղանկյուն */
+    background-color: #f0eeeb;
+    /* Նկարի բաց մոխրագույն ֆոնը */
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Բուն նկարը */
+.img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Կամ cover, կախված նկարի չափսից */
+    mix-blend-mode: multiply;
+    /* Օգնում է, եթե նկարը սպիտակ ֆոնով է */
+}
+
+/* Վերնագիր */
+.single-item h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 8px 0;
+    white-space: nowrap;
+    /* Եթե ուզում եք 1 տողով մնա */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Ռեյտինգի բլոկ */
+.rating-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+
+.stars-row {
+    display: flex;
+    gap: 2px;
+    color: #ffc633;
+    /* Աստղերի դեղին գույնը */
+}
+
+.rating-num {
+    font-size: 12px;
+    color: #666;
+    /* Մոխրագույն տեքստ */
+}
+
+/* Գին */
+.price-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
