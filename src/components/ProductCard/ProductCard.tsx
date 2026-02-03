@@ -1,8 +1,8 @@
 // src/components/ProductCard/ProductCard.tsx
 
 import { Link } from 'react-router-dom';
-import RatingStars from '../RatingStars/RatingStars'; // Համոզվեք, որ ուղին ճիշտ է դեպի RatingStars.tsx
-import './ProductCard.css'; // Եթե ունեք առանձին CSS ֆայլ այս կոմպոնենտի համար
+import RatingStars from '../RatingStars/RatingStars';
+import './ProductCard.css';
 
 interface ProductCardProps {
   id: number;
@@ -17,10 +17,9 @@ const ProductCard = ({ id, title, price, image, rating }: ProductCardProps) => {
     <Link 
       to={`/product/${id}`} 
       className="product-card-link" 
-      style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+      style={{ textDecoration: 'none', color: 'inherit' }}
     >
       <div className="single-item">
-        
         {/* Նկարի հատված */}
         <div className="img-holder">
           <img 
@@ -45,7 +44,6 @@ const ProductCard = ({ id, title, price, image, rating }: ProductCardProps) => {
         <div className="price-label">
           ${price}
         </div>
-
       </div>
     </Link>
   );

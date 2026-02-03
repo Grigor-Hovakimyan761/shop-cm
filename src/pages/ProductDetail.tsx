@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import RatingStars from '../components/RatingStars/RatingStars'; // Ներմուծում ենք աստղերի կոմպոնենտը
-import './ProductDetail.css'; // Չմոռանաք CSS ֆայլը
-
+import { useCartStore } from '../store/cartStore';
+import RatingStars from '../components/RatingStars/RatingStars';
+import './ProductDetail.css';
+import '../components/AlsoLike/AlsoLIke'
+import AlsoLike from '../components/AlsoLike/AlsoLIke';
 
 interface ProductData {
   id: number;
@@ -18,7 +20,9 @@ interface ProductData {
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const addToCart = useCartStore((state) => state.addToCart);
   const [product, setProduct] = useState<ProductData | null>(null);
+  const [showNotification, setShowNotification] = useState(false);
 
   useEffect(() => {
     const fetchSingleProduct = async () => {
@@ -39,6 +43,7 @@ const ProductDetail = () => {
   if (!product) return <div>Loading...</div>;
 
   return (
+    <>
     <div className="product-detail-page">
       {/* --- Նկարների հատված (Ձախ մաս) --- */}
       <div className="gallery-section">
@@ -79,9 +84,33 @@ const ProductDetail = () => {
            </div>
         </div>
 
-        <button className="add-to-cart-btn">Add to Cart</button>
+        <button 
+          className="add-to-cart-btn"
+          onClick={() => {
+            addToCart({
+              id: product.id,
+              title: product.title,
+              price: product.price,
+              image: product.image,
+              rating: product.rating,
+            });
+            setShowNotification(true);
+            setTimeout(() => setShowNotification(false), 3000);
+          }}
+        >
+          Add to Cart
+        </button>
+
+        {/* Notification Toast */}
+        {showNotification && (
+          <div className="notification-toast">
+            ✓ Product added to cart!
+          </div>
+        )}
       </div>
     </div>
+   <div className="also"><AlsoLike /></div>
+   </>
   );
 };
 
