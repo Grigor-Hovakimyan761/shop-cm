@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import RatingStars from '../components/RatingStars/RatingStars'; // Ներմուծում ենք աստղերի կոմպոնենտը
 import './ProductDetail.css'; // Չմոռանաք CSS ֆայլը
 
+
 interface ProductData {
   id: number;
   title: string;
