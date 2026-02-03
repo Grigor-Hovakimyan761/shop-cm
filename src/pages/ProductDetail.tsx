@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom';
 import { useCartStore } from '../store/cartStore';
 import RatingStars from '../components/RatingStars/RatingStars';
 import './ProductDetail.css';
-import '../components/AlsoLike/AlsoLIke'
-import AlsoLike from '../components/AlsoLike/AlsoLIke';
+import '../components/AlsoLike/AlsoLike'
+import AlsoLike from '../components/AlsoLike/AlsoLike';
 
 interface ProductData {
   id: number;
