@@ -20,7 +20,6 @@ function AlsoLIke() {
 
         Promise.all([
             fetch(`${BASE_URL}/products`).then(res => res.json()),
-            fetch(`${BASE_URL}/products`).then(res => res.json()),
         ])
             .then(([productsData]) => {
                 setProducts(productsData.slice(0, 4));
